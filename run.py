@@ -11,11 +11,11 @@ from utils import get_data, get_scaler, maybe_make_dir
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-e', '--episode', type=int, default=10,
+    parser.add_argument('-e', '--episode', type=int, default=50,
                         help='number of episode to run')
     parser.add_argument('-b', '--batch_size', type=int, default=32,
                         help='batch size for experience replay')
-    parser.add_argument('-i', '--initial_invest', type=int, default=20000,
+    parser.add_argument('-i', '--initial_invest', type=int, default=50000,
                         help='initial investment amount')
     parser.add_argument('-m', '--mode', type=str, required=True,
                         help='either "train" or "test"')

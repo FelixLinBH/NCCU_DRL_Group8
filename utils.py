@@ -5,10 +5,11 @@ from sklearn.preprocessing import StandardScaler
 
 
 def get_data(col='close'):
-    """ Returns a 3 x n_step array """
+    """ Returns a 4 x n_step array """
     msft = pd.read_csv('output/15_output.csv', usecols=[col])
     ibm = pd.read_csv('output/104_output.csv', usecols=[col])
     qcom = pd.read_csv('output/1277_output.csv', usecols=[col])
+    test = pd.read_csv('output/52_output.csv', usecols=[col])
 
     # msft = pd.read_csv('data/daily_MSFT.csv', usecols=[col])
     # ibm = pd.read_csv('data/daily_IBM.csv', usecols=[col])
@@ -16,7 +17,8 @@ def get_data(col='close'):
     # recent price are at top; reverse it
     return np.array([msft[col].values[:900:],
                      ibm[col].values[:900:],
-                     qcom[col].values[:900:]])
+                     qcom[col].values[:900:],
+                     test[col].values[:900:]])
 
 
 def get_scaler(env):
